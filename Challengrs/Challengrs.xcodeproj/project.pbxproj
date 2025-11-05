@@ -11,6 +11,18 @@
 		B4BF4C212EBBD56200FCA0BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C202EBBD56200FCA0BA /* ContentView.swift */; };
 		B4BF4C232EBBD56600FCA0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BF4C222EBBD56600FCA0BA /* Assets.xcassets */; };
 		B4BF4C262EBBD56600FCA0BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BF4C252EBBD56600FCA0BA /* Preview Assets.xcassets */; };
+		B4BF4C2D2EBBD88D00FCA0BA /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C2C2EBBD88D00FCA0BA /* SessionStore.swift */; };
+		B4BF4C302EBBD9AD00FCA0BA /* SimpleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C2F2EBBD9AD00FCA0BA /* SimpleUser.swift */; };
+		B4BF4C322EBBDA4C00FCA0BA /* SplashContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C312EBBDA4C00FCA0BA /* SplashContainerView.swift */; };
+		B4BF4C342EBBDA8600FCA0BA /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C332EBBDA8600FCA0BA /* SplashView.swift */; };
+		B4BF4C362EBBDAE800FCA0BA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C352EBBDAE700FCA0BA /* AuthView.swift */; };
+		B4BF4C382EBBDB0A00FCA0BA /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C372EBBDB0A00FCA0BA /* MainTabView.swift */; };
+		B4BF4C3A2EBBDBAA00FCA0BA /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C392EBBDBAA00FCA0BA /* FirestoreService.swift */; };
+		B4BF4C3C2EBBE39400FCA0BA /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C3B2EBBE39400FCA0BA /* Challenge.swift */; };
+		B4BF4C3E2EBBE42600FCA0BA /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C3D2EBBE42600FCA0BA /* Submission.swift */; };
+		B4BF4C412EBBE46F00FCA0BA /* CreateChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C402EBBE46F00FCA0BA /* CreateChallengeView.swift */; };
+		B4BF4C442EBBE51F00FCA0BA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C432EBBE51F00FCA0BA /* ImagePicker.swift */; };
+		B4BF4C472EBBE57C00FCA0BA /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C462EBBE57C00FCA0BA /* FirestoreService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +31,18 @@
 		B4BF4C202EBBD56200FCA0BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B4BF4C222EBBD56600FCA0BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4BF4C252EBBD56600FCA0BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B4BF4C2C2EBBD88D00FCA0BA /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
+		B4BF4C2F2EBBD9AD00FCA0BA /* SimpleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleUser.swift; sourceTree = "<group>"; };
+		B4BF4C312EBBDA4C00FCA0BA /* SplashContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashContainerView.swift; sourceTree = "<group>"; };
+		B4BF4C332EBBDA8600FCA0BA /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		B4BF4C352EBBDAE700FCA0BA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		B4BF4C372EBBDB0A00FCA0BA /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		B4BF4C392EBBDBAA00FCA0BA /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		B4BF4C3B2EBBE39400FCA0BA /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		B4BF4C3D2EBBE42600FCA0BA /* Submission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
+		B4BF4C402EBBE46F00FCA0BA /* CreateChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeView.swift; sourceTree = "<group>"; };
+		B4BF4C432EBBE51F00FCA0BA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		B4BF4C462EBBE57C00FCA0BA /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +75,18 @@
 		B4BF4C1D2EBBD56200FCA0BA /* Challengrs */ = {
 			isa = PBXGroup;
 			children = (
+				B4BF4C452EBBE56100FCA0BA /* Services */,
+				B4BF4C422EBBE48C00FCA0BA /* Utilities */,
+				B4BF4C3F2EBBE45000FCA0BA /* Views */,
+				B4BF4C2E2EBBD98C00FCA0BA /* Models */,
 				B4BF4C1E2EBBD56200FCA0BA /* ChallengrsApp.swift */,
+				B4BF4C2C2EBBD88D00FCA0BA /* SessionStore.swift */,
 				B4BF4C202EBBD56200FCA0BA /* ContentView.swift */,
+				B4BF4C312EBBDA4C00FCA0BA /* SplashContainerView.swift */,
+				B4BF4C332EBBDA8600FCA0BA /* SplashView.swift */,
+				B4BF4C352EBBDAE700FCA0BA /* AuthView.swift */,
+				B4BF4C372EBBDB0A00FCA0BA /* MainTabView.swift */,
+				B4BF4C392EBBDBAA00FCA0BA /* FirestoreService.swift */,
 				B4BF4C222EBBD56600FCA0BA /* Assets.xcassets */,
 				B4BF4C242EBBD56600FCA0BA /* Preview Content */,
 			);
@@ -65,6 +99,40 @@
 				B4BF4C252EBBD56600FCA0BA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B4BF4C2E2EBBD98C00FCA0BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF4C2F2EBBD9AD00FCA0BA /* SimpleUser.swift */,
+				B4BF4C3B2EBBE39400FCA0BA /* Challenge.swift */,
+				B4BF4C3D2EBBE42600FCA0BA /* Submission.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B4BF4C3F2EBBE45000FCA0BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF4C402EBBE46F00FCA0BA /* CreateChallengeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B4BF4C422EBBE48C00FCA0BA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF4C432EBBE51F00FCA0BA /* ImagePicker.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B4BF4C452EBBE56100FCA0BA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B4BF4C462EBBE57C00FCA0BA /* FirestoreService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +205,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4BF4C442EBBE51F00FCA0BA /* ImagePicker.swift in Sources */,
+				B4BF4C362EBBDAE800FCA0BA /* AuthView.swift in Sources */,
+				B4BF4C302EBBD9AD00FCA0BA /* SimpleUser.swift in Sources */,
 				B4BF4C212EBBD56200FCA0BA /* ContentView.swift in Sources */,
+				B4BF4C382EBBDB0A00FCA0BA /* MainTabView.swift in Sources */,
 				B4BF4C1F2EBBD56200FCA0BA /* ChallengrsApp.swift in Sources */,
+				B4BF4C2D2EBBD88D00FCA0BA /* SessionStore.swift in Sources */,
+				B4BF4C472EBBE57C00FCA0BA /* FirestoreService.swift in Sources */,
+				B4BF4C322EBBDA4C00FCA0BA /* SplashContainerView.swift in Sources */,
+				B4BF4C3E2EBBE42600FCA0BA /* Submission.swift in Sources */,
+				B4BF4C3A2EBBDBAA00FCA0BA /* FirestoreService.swift in Sources */,
+				B4BF4C342EBBDA8600FCA0BA /* SplashView.swift in Sources */,
+				B4BF4C412EBBE46F00FCA0BA /* CreateChallengeView.swift in Sources */,
+				B4BF4C3C2EBBE39400FCA0BA /* Challenge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
