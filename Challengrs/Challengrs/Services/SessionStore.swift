@@ -226,49 +226,101 @@ extension SessionStore {
     /// For full cleanup prefer a Cloud Function using admin privileges.
     func deleteAccount(currentPassword: String, completion: @escaping (Error?) -> Void) {
         guard let user = Auth.auth().currentUser, let email = user.email else {
-            DispatchQueue.main.async { completion(NSError(domain: "SessionStore", code: 401, userInfo: [NSLocalizedDescriptionKey: "Not signed in"])) }
+            DispatchQueue.main.async {
+                completion(NSError(domain: "SessionStore", code: 401, userInfo: [NSLocalizedDescriptionKey: "Not signed in"]))
+            }
             return
         }
 
-        let cred = EmailAuthProvider.credential(withEmail: email, password: currentPassword)
-        user.reauthenticate(with: cred) { [weak self] _, err in
-            guard let self = self else { DispatchQueue.main.async { completion(NSError(domain: "SessionStore", code: -2, userInfo: nil)) }; return }
-            if let e = err { DispatchQueue.main.async { completion(e) }; return }
+        let uid = user.uid
+        print("[SessionStore] deleteAccount: starting for uid=\(uid)")
 
-            let uid = user.uid
+        let cred = EmailAuthProvider.credential(withEmail: email, password: currentPassword)
+        user.reauthenticate(with: cred) { [weak self] _, reauthErr in
+            guard let self = self else {
+                DispatchQueue.main.async { completion(NSError(domain: "SessionStore", code: -2, userInfo: nil)) }
+                return
+            }
+            if let reauthErr = reauthErr {
+                print("[SessionStore] reauth failed:", reauthErr.localizedDescription)
+                DispatchQueue.main.async { completion(reauthErr) }
+                return
+            }
+            print("[SessionStore] reauth succeeded for uid=\(uid)")
+
+            var firstError: Error? = nil
+
+            // 1) delete Firestore user doc
             let userDoc = self.db.collection("users").document(uid)
-            // delete user doc (best-effort)
             userDoc.delete { userDocErr in
-                if let e = userDocErr { print("Warning: failed to delete user doc:", e) }
-                // attempt to remove avatar and user files (best-effort)
+                if let e = userDocErr {
+                    print("[SessionStore] warning: failed to delete user doc:", e.localizedDescription)
+                    if firstError == nil { firstError = e }
+                } else {
+                    print("[SessionStore] user doc deleted")
+                }
+
+                // 2) attempt to remove avatar and user files (best-effort)
                 let avatarRef = self.storage.reference().child("avatars/\(uid).jpg")
-                avatarRef.delete { _ in
-                    // try deleting a user folder if you use one (listAll is limited, ok for small sets)
-                    let userFolder = self.storage.reference().child("users/\(uid)")
-                    userFolder.listAll { listResult, listErr in
+                avatarRef.delete { avatarErr in
+                    if let aerr = avatarErr {
+                        print("[SessionStore] avatar delete warning:", aerr.localizedDescription)
+                        if firstError == nil { firstError = aerr }
+                    } else {
+                        print("[SessionStore] avatar deleted")
+                    }
+
+                    // Attempt to delete user folder contents (if any)
+                    let userFolderRef = self.storage.reference().child("users/\(uid)")
+                    userFolderRef.listAll { listResult, listErr in
                         if let listErr = listErr {
-                            print("Warning: listAll error:", listErr.localizedDescription)
+                            print("[SessionStore] listAll warning:", listErr.localizedDescription)
+                            if firstError == nil { firstError = listErr }
                         } else {
-                            // delete files in this folder (best-effort)
+                            // delete items (best-effort)
                             for item in listResult.items {
-                                item.delete { _ in /* ignore errors for now */ }
+                                item.delete { delErr in
+                                    if let d = delErr {
+                                        print("[SessionStore] item delete warning:", d.localizedDescription)
+                                        if firstError == nil { firstError = d }
+                                    } else {
+                                        print("[SessionStore] deleted storage item: \(item.fullPath)")
+                                    }
+                                }
                             }
-                            // also attempt to handle subfolders/prefixes
+                            // delete subfolder items if any
                             for prefix in listResult.prefixes {
                                 prefix.listAll { subRes, subErr in
                                     if let subErr = subErr {
-                                        print("Warning listing subfolder:", subErr.localizedDescription)
+                                        print("[SessionStore] subfolder list warning:", subErr.localizedDescription)
+                                        if firstError == nil { firstError = subErr }
                                     } else {
                                         for it in subRes.items {
-                                            it.delete { _ in /* ignore */ }
+                                            it.delete { de in
+                                                if let de = de { print("[SessionStore] sub-item delete warning:", de.localizedDescription); if firstError == nil { firstError = de } }
+                                                else { print("[SessionStore] deleted sub-item: \(it.fullPath)") }
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
-                    }
-                }
-            }
-        }
+
+                        // 3) Finally attempt to delete the Firebase Auth user
+                        user.delete { authDelErr in
+                            if let authDelErr = authDelErr {
+                                print("[SessionStore] user.delete() failed:", authDelErr.localizedDescription)
+                                // If it's a 'recent login' error, surface it literally
+                                if firstError == nil { firstError = authDelErr }
+                                DispatchQueue.main.async { completion(firstError ?? authDelErr) }
+                            } else {
+                                print("[SessionStore] Firebase Auth user deleted successfully")
+                                DispatchQueue.main.async { completion(firstError) } // firstError may be nil (ideal)
+                            }
+                        }
+                    } // end listAll
+                } // end avatar delete
+            } // end userDoc delete
+        } // end reauth
     }
 }
