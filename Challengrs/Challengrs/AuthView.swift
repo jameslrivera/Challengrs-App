@@ -71,28 +71,31 @@ struct AuthView: View {
 
     private func submit() {
         errorMsg = nil
+        // NOTE: SessionStore currently expects email:password:completion: so we pass username into email.
+        // In future you can update UI to require a real email address, or change SessionStore to accept username.
+        let emailToUse = username
+
         if isSignUp {
-            session.signUp(username: username, password: password) { result in
+            session.signUp(email: emailToUse, password: password) { err in
                 DispatchQueue.main.async {
-                    switch result {
-                    case .success:
+                    if let e = err {
+                        errorMsg = e.localizedDescription
+                    } else {
                         presentation.wrappedValue.dismiss()
-                    case .failure(let err):
-                        errorMsg = err.localizedDescription
                     }
                 }
             }
         } else {
-            session.signIn(username: username, password: password) { result in
+            session.signIn(email: emailToUse, password: password) { err in
                 DispatchQueue.main.async {
-                    switch result {
-                    case .success:
+                    if let e = err {
+                        errorMsg = e.localizedDescription
+                    } else {
                         presentation.wrappedValue.dismiss()
-                    case .failure(let err):
-                        errorMsg = err.localizedDescription
                     }
                 }
             }
         }
     }
+
 }

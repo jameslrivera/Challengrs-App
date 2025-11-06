@@ -23,7 +23,6 @@
 		B4BF4C342EBBDA8600FCA0BA /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C332EBBDA8600FCA0BA /* SplashView.swift */; };
 		B4BF4C362EBBDAE800FCA0BA /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C352EBBDAE700FCA0BA /* AuthView.swift */; };
 		B4BF4C382EBBDB0A00FCA0BA /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C372EBBDB0A00FCA0BA /* MainTabView.swift */; };
-		B4BF4C3A2EBBDBAA00FCA0BA /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C392EBBDBAA00FCA0BA /* FirestoreService.swift */; };
 		B4BF4C3C2EBBE39400FCA0BA /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C3B2EBBE39400FCA0BA /* Challenge.swift */; };
 		B4BF4C3E2EBBE42600FCA0BA /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C3D2EBBE42600FCA0BA /* Submission.swift */; };
 		B4BF4C412EBBE46F00FCA0BA /* CreateChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C402EBBE46F00FCA0BA /* CreateChallengeView.swift */; };
@@ -44,7 +43,6 @@
 		B4BF4C332EBBDA8600FCA0BA /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B4BF4C352EBBDAE700FCA0BA /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		B4BF4C372EBBDB0A00FCA0BA /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		B4BF4C392EBBDBAA00FCA0BA /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		B4BF4C3B2EBBE39400FCA0BA /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		B4BF4C3D2EBBE42600FCA0BA /* Submission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
 		B4BF4C402EBBE46F00FCA0BA /* CreateChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeView.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				B4BF4C332EBBDA8600FCA0BA /* SplashView.swift */,
 				B4BF4C352EBBDAE700FCA0BA /* AuthView.swift */,
 				B4BF4C372EBBDB0A00FCA0BA /* MainTabView.swift */,
-				B4BF4C392EBBDBAA00FCA0BA /* FirestoreService.swift */,
 				B4BF4C222EBBD56600FCA0BA /* Assets.xcassets */,
 				B4BF4C242EBBD56600FCA0BA /* Preview Content */,
 			);
@@ -239,7 +236,6 @@
 				B4BF4C472EBBE57C00FCA0BA /* FirestoreService.swift in Sources */,
 				B4BF4C322EBBDA4C00FCA0BA /* SplashContainerView.swift in Sources */,
 				B4BF4C3E2EBBE42600FCA0BA /* Submission.swift in Sources */,
-				B4BF4C3A2EBBDBAA00FCA0BA /* FirestoreService.swift in Sources */,
 				B4BF4C342EBBDA8600FCA0BA /* SplashView.swift in Sources */,
 				B4BF4C412EBBE46F00FCA0BA /* CreateChallengeView.swift in Sources */,
 				B4BF4C3C2EBBE39400FCA0BA /* Challenge.swift in Sources */,
