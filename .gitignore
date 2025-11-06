@@ -18,6 +18,9 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 
+#Firebase
+GoogleService-Info.plist
+
 # macOS
 *.swp
 *~.nib

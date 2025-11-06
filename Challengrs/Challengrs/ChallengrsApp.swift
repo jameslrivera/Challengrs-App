@@ -6,16 +6,15 @@
 //
 
 import SwiftUI
-// import Firebase // uncomment this later when you add Firebase SDK and GoogleService-Info.plist
+import Firebase
 
 @main
 struct ChallengrsApp: App {
-    // Use the mock/local SessionStore for now. We'll swap to FirebaseAuth later.
     @StateObject private var session = SessionStore.shared
 
     init() {
-        // If/when you add Firebase, uncomment the import above and this line:
-        // FirebaseApp.configure()
+        FirebaseApp.configure()
+        
     }
 
     var body: some Scene {
