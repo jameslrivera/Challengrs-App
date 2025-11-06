@@ -36,9 +36,15 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
-                Text("Hello, \(session.currentUser?.username ?? "—")")
+                Text("Hello, \(session.currentUser?.displayName ?? session.currentUser?.firstName ?? "—")")
                     .font(.title2)
                     .bold()
+
+                if let email = session.currentUser?.email {
+                    Text(email)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
 
                 Text("Balance (test): $0.00")
                     .font(.subheadline)
@@ -56,7 +62,7 @@ struct ProfileView: View {
                     }
 
                     Button(action: {
-                        session.signOut()
+                        _ = session.signOut()
                     }) {
                         Text("Sign out")
                             .frame(maxWidth: .infinity)

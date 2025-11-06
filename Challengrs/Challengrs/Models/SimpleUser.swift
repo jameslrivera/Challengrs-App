@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct SimpleUser: Codable, Identifiable {
+struct SimpleUser: Identifiable, Codable {
     var id: String
-    var username: String
+    var email: String
+    var firstName: String
+    var lastName: String
+    var displayName: String { firstName } 
+    var photoURL: String?
+    var createdAt: Date?
 }

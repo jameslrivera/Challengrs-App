@@ -91,7 +91,6 @@
 				B4BF4C2E2EBBD98C00FCA0BA /* Models */,
 				B4BF4C1E2EBBD56200FCA0BA /* ChallengrsApp.swift */,
 				B479A8192EBC2DAC0069678C /* GoogleService-Info.plist */,
-				B4BF4C2C2EBBD88D00FCA0BA /* SessionStore.swift */,
 				B4BF4C202EBBD56200FCA0BA /* ContentView.swift */,
 				B4BF4C312EBBDA4C00FCA0BA /* SplashContainerView.swift */,
 				B4BF4C332EBBDA8600FCA0BA /* SplashView.swift */,
@@ -140,6 +139,7 @@
 		B4BF4C452EBBE56100FCA0BA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B4BF4C2C2EBBD88D00FCA0BA /* SessionStore.swift */,
 				B4BF4C462EBBE57C00FCA0BA /* FirestoreService.swift */,
 			);
 			path = Services;
