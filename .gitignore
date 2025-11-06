@@ -6,6 +6,9 @@ DerivedData/
 xcuserdata/
 *.xcuserstate
 
+#Firebase
+GoogleService-Info.plist
+
 # Swift Package Manager
 Packages/
 .swiftpm/
