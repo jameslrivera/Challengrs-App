@@ -13,6 +13,9 @@
 		B479A8212EBC41350069678C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B479A8202EBC41350069678C /* FirebaseFirestore */; };
 		B479A8232EBC41350069678C /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B479A8222EBC41350069678C /* FirebaseFirestoreSwift-Beta */; };
 		B479A8252EBC41350069678C /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B479A8242EBC41350069678C /* FirebaseStorage */; };
+		B4A66A032EBCFE1F0088118A /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A66A022EBCFE1F0088118A /* EditProfileView.swift */; };
+		B4A66A052EBCFE450088118A /* ChangePassswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A66A042EBCFE450088118A /* ChangePassswordView.swift */; };
+		B4A66A072EBCFE750088118A /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A66A062EBCFE750088118A /* DeleteAccountView.swift */; };
 		B4BF4C1F2EBBD56200FCA0BA /* ChallengrsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C1E2EBBD56200FCA0BA /* ChallengrsApp.swift */; };
 		B4BF4C212EBBD56200FCA0BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BF4C202EBBD56200FCA0BA /* ContentView.swift */; };
 		B4BF4C232EBBD56600FCA0BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BF4C222EBBD56600FCA0BA /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		B479A8192EBC2DAC0069678C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B4A66A022EBCFE1F0088118A /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		B4A66A042EBCFE450088118A /* ChangePassswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassswordView.swift; sourceTree = "<group>"; };
+		B4A66A062EBCFE750088118A /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
 		B4BF4C1B2EBBD56200FCA0BA /* Challengrs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challengrs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BF4C1E2EBBD56200FCA0BA /* ChallengrsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengrsApp.swift; sourceTree = "<group>"; };
 		B4BF4C202EBBD56200FCA0BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +72,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4A66A082EBCFED70088118A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B4A66A062EBCFE750088118A /* DeleteAccountView.swift */,
+				B4A66A022EBCFE1F0088118A /* EditProfileView.swift */,
+				B4A66A042EBCFE450088118A /* ChangePassswordView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		B4BF4C122EBBD56200FCA0BA = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +139,7 @@
 		B4BF4C3F2EBBE45000FCA0BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B4A66A082EBCFED70088118A /* Profile */,
 				B4BF4C402EBBE46F00FCA0BA /* CreateChallengeView.swift */,
 			);
 			path = Views;
@@ -226,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A66A032EBCFE1F0088118A /* EditProfileView.swift in Sources */,
 				B4BF4C442EBBE51F00FCA0BA /* ImagePicker.swift in Sources */,
 				B4BF4C362EBBDAE800FCA0BA /* AuthView.swift in Sources */,
 				B4BF4C302EBBD9AD00FCA0BA /* SimpleUser.swift in Sources */,
@@ -237,6 +255,8 @@
 				B4BF4C322EBBDA4C00FCA0BA /* SplashContainerView.swift in Sources */,
 				B4BF4C3E2EBBE42600FCA0BA /* Submission.swift in Sources */,
 				B4BF4C342EBBDA8600FCA0BA /* SplashView.swift in Sources */,
+				B4A66A052EBCFE450088118A /* ChangePassswordView.swift in Sources */,
+				B4A66A072EBCFE750088118A /* DeleteAccountView.swift in Sources */,
 				B4BF4C412EBBE46F00FCA0BA /* CreateChallengeView.swift in Sources */,
 				B4BF4C3C2EBBE39400FCA0BA /* Challenge.swift in Sources */,
 			);
