@@ -25,9 +25,9 @@ struct SplashView: View {
                         .foregroundColor(.blue)
                         .scaleEffect(animate ? 1.05 : 0.95)
                 }
-                Text("Challengers")
+                Text("Challengrs")
                     .font(.system(size: 28, weight: .semibold))
-                Text("Get real. Put stakes on it.")
+                Text("Are you up for the Challenge?")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }

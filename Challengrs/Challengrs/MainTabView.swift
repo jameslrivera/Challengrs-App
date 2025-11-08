@@ -1,10 +1,3 @@
-//
-//  MainTabView.swift
-//  Challengrs
-//
-//  Created by James Rivera on 11/5/25.
-//
-
 import SwiftUI
 
 struct MainTabView: View {
@@ -21,7 +14,7 @@ struct MainTabView: View {
                 .tag(0)
 
             // CENTER — Create (index 1)
-            CreatePlaceholderView()
+            CreateTabView()  // New view with button to present the form
                 .tabItem {
                     Label("Create", systemImage: "plus.circle")
                 }
@@ -37,11 +30,8 @@ struct MainTabView: View {
         .environmentObject(session)
     }
 }
+
 // ProfileView (sheet-based)
-import SwiftUI
-
-import SwiftUI
-
 struct ProfileView: View {
     @EnvironmentObject var session: SessionStore
 
@@ -57,7 +47,7 @@ struct ProfileView: View {
                 VStack(spacing: 14) {
                     // Greeting / email
                     VStack(spacing: 6) {
-                        Text("Hello, \(session.currentUser?.displayName ?? session.currentUser?.firstName ?? "—")")
+                        Text("Hello, \(session.currentUser?.displayName ?? session.currentUser?.firstName ?? "-")")
                             .font(.title2)
                             .bold()
                         if let email = session.currentUser?.email {
@@ -131,70 +121,6 @@ struct UniformFilledButtonStyle: ButtonStyle {
                     .shadow(color: Color.black.opacity(configuration.isPressed ? 0.06 : 0.12), radius: configuration.isPressed ? 1 : 4, x: 0, y: configuration.isPressed ? 0 : 2)
             )
             .scaleEffect(configuration.isPressed ? 0.995 : 1.0)
-    }
-}
-
-// MARK: - CreatePlaceholderView
-struct CreatePlaceholderView: View {
-    var body: some View {
-        NavigationView {
-            VStack(spacing: 16) {
-                Image(systemName: "target")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 84, height: 84)
-                    .foregroundColor(.blue.opacity(0.8))
-
-                Text("Create a Challenge")
-                    .font(.title2)
-                    .bold()
-
-                Text("Wire up the Create Challenge screen here. Add fields for name, description, stake, dates, and invite code.")
-                    .font(.body)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-
-                Button(action: {
-                    // future: open create challenge flow
-                }) {
-                    Text("Start a new challenge")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.accentColor)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                }
-
-                Spacer()
-            }
-            .padding()
-            .navigationTitle("Create")
-        }
-    }
-}
-
-// MARK: - CurrentChallengesView
-struct CurrentChallengesView: View {
-    var body: some View {
-        NavigationView {
-            VStack(spacing: 16) {
-                Text("Your Current Challenges")
-                    .font(.title2)
-                    .bold()
-
-                Text("This list will show challenges you're participating in. Tap one to see details and submit proof.")
-                    .font(.body)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-
-                Spacer()
-            }
-            .padding()
-            .navigationTitle("Current")
-        }
     }
 }
 
